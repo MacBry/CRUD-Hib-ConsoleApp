@@ -48,6 +48,7 @@ public class Library {
 		}
 	}
 	
+	//FIND METHODS
 	public void findBooksByTitle(String tempTitle) {
 		try {
 			List<Book> booksList;
@@ -132,7 +133,117 @@ public class Library {
 		}
 	}
 	
+	//DELETE METHODS
+	public void deleteBooksByTitle(String tempTitle) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempTitle + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
 	
+	public void deleteBooksByAuthor(String tempAuthor) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempAuthor + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
+	
+	public void deleteBooksByRelease(int tempYear) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempYear + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
+	
+	public void deleteBooksByNumberOfPages(int tempPageNumb) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempPageNumb + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
+	
+	public void deleteBooksByPublisher(String tempPublisher) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempPublisher + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
+	
+	public void deleteBooksByISBN(String tempISBN) {
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		session.createQuery("delete from Book book where book.title='" + tempISBN + "'").executeUpdate();
+		session.getTransaction().commit();
+	}
+	
+	//EDIT METHODS
+	public void editBookTitle(Book tempBook, String newTitle) {
+		String oldTitle = tempBook.getTitle();
+		Session session = factory.getCurrentSession();
+		System.out.println("Curent field value: " + oldTitle);
+		tempBook.setTitle(newTitle);
+		session.getTransaction().commit();
+		System.out.println("You have changed field from " + oldTitle + " to " + tempBook.getTitle());
+	}
+	
+	public void editBookAuthor(String tempAuthor, int id) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, id);
+		System.out.println("Curent field value: " + tempBook.getAuthor());
+		tempBook.setAuthor(tempAuthor);
+		session.getTransaction().commit();
+	}
+	
+	public void editBookRelease(int tempYear, int id) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, id);
+		System.out.println("Curent field value: " + tempBook.getReleaseDate());
+		tempBook.setReleaseDate(tempYear);
+		session.getTransaction().commit();
+	}
+	
+	public void editBookNumberOfPage(int tempPageNumb, int id) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, id);
+		System.out.println("Curent field value: " + tempBook.getPages());
+		tempBook.setPages(tempPageNumb);
+		session.getTransaction().commit();
+	}
+	
+	public void editBookPublisher(String tempPublisher, int id) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, id);
+		System.out.println("Curent field value: " + tempBook.getPublisher());
+		tempBook.setPublisher(tempPublisher);
+		session.getTransaction().commit();
+	}
+	
+	public void editBookISBN(String tempISBN, int id) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, id);
+		System.out.println("Curent field value: " + tempBook.getIsbn());
+		tempBook.setIsbn(tempISBN);
+		session.getTransaction().commit();
+	}
+	
+	public Book selectBookById(int tempId) {
+		Book tempBook;
+		Session session = factory.getCurrentSession();
+		session.beginTransaction();
+		tempBook = session.get(Book.class, tempId);
+
+		return tempBook;
+	}
 	
 	private void printBookList(List<Book> booksList) {
 		for(Book book : booksList) {
