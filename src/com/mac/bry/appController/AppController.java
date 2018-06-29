@@ -1,7 +1,6 @@
 package com.mac.bry.appController;
 
 import com.mac.bry.database.Library;
-import com.mac.bry.entity.Book;
 import com.mac.bry.utils.DataReader;
 
 public class AppController {
@@ -181,7 +180,6 @@ public class AppController {
 	public void EditLoop() {
 		printEditOption();
 		int editOption;
-		Book tempBook;
 		
 		while((editOption = dataReader.readNumber()) != EDIT_EXIT) {
 			switch (editOption) {
