@@ -190,28 +190,28 @@ public class AppController {
 				break;
 
 			case EDIT_BY_AUTHOR:
-				System.out.println("Enter book author: ");
-				library.deleteBooksByAuthor(dataReader.readString());
+				System.out.println("Enter book id: ");
+				library.editBookAuthor(library.selectBookById(dataReader.readNumber()), dataReader.readString());
 				break;
 			
 			case EDIT_BY_RELEASE_DATE:
-				System.out.println("Enter release year: ");
-				library.deleteBooksByRelease(dataReader.readNumber());
+				System.out.println("Enter book id: ");
+				library.editBookRelease(library.selectBookById(dataReader.readNumber()), dataReader.readNumber());
 				break;
 				
 			case EDIT_BY_NUMBER_OF_PAGES:
-				System.out.println("Enter number of pages: ");
-				library.deleteBooksByNumberOfPages(dataReader.readNumber());
+				System.out.println("Enter book id: ");
+				library.editBoookPages(library.selectBookById(dataReader.readNumber()), dataReader.readNumber());
 				break;
 				
 			case EDIT_BY_PUBLISHER:
-				System.out.println("Enter publisher: ");
-				library.deleteBooksByPublisher(dataReader.readString());
+				System.out.println("Enter book id: ");
+				library.editBookPublisher(library.selectBookById(dataReader.readNumber()), dataReader.readString());
 				break;
 				
 			case EDIT_BY_ISBN:
-				System.out.println("Enter ISBN number: ");
-				library.deleteBooksByISBN(dataReader.readString());
+				System.out.println("Enter book id: ");
+				library.editBookISBN(library.selectBookById(dataReader.readNumber()), dataReader.readString());
 				break;
 			
 			default:

@@ -236,12 +236,36 @@ public class Library {
 		System.out.println("You have changed field from " + oldYear + " to " + tempBook.getReleaseDate());
 	}
 	
+	public void editBoookPages(Book tempBook, int newPagesNumber) {
+		int oldPagesNumber = tempBook.getReleaseDate();
+		Session session = factory.getCurrentSession();
+		tempBook.setReleaseDate(newPagesNumber);;
+		session.getTransaction().commit();
+		System.out.println("You have changed field from " + oldPagesNumber + " to " + tempBook.getPages());
+	}
+	
+	public void editBookPublisher(Book tempBook, String newPublisher) {
+		String oldPublisher = tempBook.getPublisher();
+		Session session = factory.getCurrentSession();
+		tempBook.setPublisher(newPublisher);;
+		session.getTransaction().commit();
+		System.out.println("You have changed field from " + oldPublisher + " to " + tempBook.getPublisher());
+	}
+	
+	public void editBookISBN(Book tempBook, String newISBN) {
+		String oldISBN = tempBook.getIsbn();
+		Session session = factory.getCurrentSession();
+		tempBook.setIsbn(newISBN);;
+		session.getTransaction().commit();
+		System.out.println("You have changed field from " + oldISBN + " to " + tempBook.getIsbn());
+	}
+	
 	public Book selectBookById(int tempId) {
 		Book tempBook;
 		Session session = factory.getCurrentSession();
 		session.beginTransaction();
 		tempBook = session.get(Book.class, tempId);
-		System.out.println("Curent field value: " + tempBook.getTitle());
+		//System.out.println("Curent field value: " + tempBook.getTitle());
 		return tempBook;
 	}
 	
