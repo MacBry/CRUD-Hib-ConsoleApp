@@ -112,27 +112,27 @@ public class Book {
 	
 	public static void printFirstTableRow() {
 		System.out.println();
-		for(int i = 0 ; i <=123; i++) {
+		for(int i = 0 ; i <=158; i++) {
 			System.out.print("=");
 		}
 		System.out.println();
 		
-		System.out.printf("%-5s || %-15s || %-25s || %-12s || %-5s || %-25s || %-10s ||\n", "ID" ,"TITLE", "AUTHOR", "RELEASE DATE", "PAGES", "PUBLISHER", "ISBN");
-		for(int i = 0 ; i <=123; i++) {
+		System.out.printf("%-5s || %-50s || %-25s || %-12s || %-5s || %-25s || %-10s ||\n", "ID" ,"TITLE", "AUTHOR", "RELEASE DATE", "PAGES", "PUBLISHER", "ISBN");
+		for(int i = 0 ; i <=158; i++) {
 			System.out.print("=");
 		}
 		System.out.println();
 	}
 	
 	public static void printLastTableRow() {
-		for(int i = 0 ; i <=123; i++) {
+		for(int i = 0 ; i <=158; i++) {
 			System.out.print("=");
 		}
 		System.out.println();
 	}
 	
 	public void PrintTableRow() {
-		System.out.printf("%-5d || %-15s || %-25s || %-12d || %-5d || %-25s || %-10s ||\n" , id ,title, author, releaseDate, pages, publisher, isbn);
+		System.out.printf("%-5d || %-50s || %-25s || %-12d || %-5d || %-25s || %-10s ||\n" , id ,title, author, releaseDate, pages, publisher, isbn);
 	}
 	
 	

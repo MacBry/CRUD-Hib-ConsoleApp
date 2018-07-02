@@ -151,7 +151,7 @@ public class Library {
 		try {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
-			session.createQuery("delete from Book book where book.title='" + tempAuthor + "'").executeUpdate();
+			session.createQuery("delete from Book book where book.author='" + tempAuthor + "'").executeUpdate();
 			session.getTransaction().commit();
 		}
 		catch (Exception e) {
@@ -164,7 +164,7 @@ public class Library {
 		try {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
-			session.createQuery("delete from Book book where book.title='" + tempYear + "'").executeUpdate();
+			session.createQuery("delete from Book book where book.releaseDate='" + tempYear + "'").executeUpdate();
 			session.getTransaction().commit();
 		}
 		catch (Exception e) {
@@ -177,7 +177,7 @@ public class Library {
 		try {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
-			session.createQuery("delete from Book book where book.title='" + tempPageNumb + "'").executeUpdate();
+			session.createQuery("delete from Book book where book.pages='" + tempPageNumb + "'").executeUpdate();
 			session.getTransaction().commit();
 		}
 		catch (Exception e) {
@@ -190,7 +190,7 @@ public class Library {
 		try {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
-			session.createQuery("delete from Book book where book.title='" + tempPublisher + "'").executeUpdate();
+			session.createQuery("delete from Book book where book.publisher='" + tempPublisher + "'").executeUpdate();
 			session.getTransaction().commit();
 		}
 		catch (Exception e) {
@@ -202,7 +202,7 @@ public class Library {
 		try {
 			Session session = factory.getCurrentSession();
 			session.beginTransaction();
-			session.createQuery("delete from Book book where book.title='" + tempISBN + "'").executeUpdate();
+			session.createQuery("delete from Book book where book.isbn='" + tempISBN + "'").executeUpdate();
 			session.getTransaction().commit();
 		}
 		catch (Exception e) {
