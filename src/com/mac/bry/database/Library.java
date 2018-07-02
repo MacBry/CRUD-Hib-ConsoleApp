@@ -270,9 +270,12 @@ public class Library {
 	}
 	
 	private void printBookList(List<Book> booksList) {
+		Book.printFirstTableRow();
 		for(Book book : booksList) {
-			System.out.println(book);
+			//System.out.println(book);
+			book.PrintTableRow();
 		}
+		Book.printLastTableRow();
 	}
 	
 }
