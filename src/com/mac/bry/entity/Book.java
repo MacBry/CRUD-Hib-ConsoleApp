@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="Books")
@@ -16,21 +18,29 @@ public class Book {
 	@Column(name="id")
 	private int id;
 	
+	@NotNull(message="test message title")
 	@Column(name="title")
 	private String title;
 	
+	@NotNull
 	@Column(name="author")
 	private String author;
 	
+	@NotNull
+	@Min(value=1800)
 	@Column(name="release_date")
 	private int releaseDate;
 	
+	@NotNull
+	@Min(value=0)
 	@Column(name="pages")
 	private int pages;
 	
+	@NotNull
 	@Column(name="publisher")
 	private String publisher;
 	
+	@NotNull
 	@Column(name="isbn")
 	private String isbn;
 

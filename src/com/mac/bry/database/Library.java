@@ -213,51 +213,81 @@ public class Library {
 	
 	//EDIT METHODS
 	public void editBookTitle(Book tempBook, String newTitle) {
-		String oldTitle = tempBook.getTitle();
-		Session session = factory.getCurrentSession();
-		tempBook.setTitle(newTitle);
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldTitle + " to " + tempBook.getTitle());
+		try {
+			String oldTitle = tempBook.getTitle();
+			Session session = factory.getCurrentSession();
+			tempBook.setTitle(newTitle);
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldTitle + " to " + tempBook.getTitle());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void editBookAuthor(Book tempBook, String newAuthor) {
-		String oldAuthor = tempBook.getAuthor();
-		Session session = factory.getCurrentSession();
-		tempBook.setAuthor(newAuthor);
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldAuthor + " to " + tempBook.getAuthor());
+		try {
+			String oldAuthor = tempBook.getAuthor();
+			Session session = factory.getCurrentSession();
+			tempBook.setAuthor(newAuthor);
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldAuthor + " to " + tempBook.getAuthor());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void editBookRelease(Book tempBook,int newYear) {
-		int oldYear = tempBook.getReleaseDate();
-		Session session = factory.getCurrentSession();
-		tempBook.setReleaseDate(newYear);;
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldYear + " to " + tempBook.getReleaseDate());
+		try {
+			int oldYear = tempBook.getReleaseDate();
+			Session session = factory.getCurrentSession();
+			tempBook.setReleaseDate(newYear);;
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldYear + " to " + tempBook.getReleaseDate());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void editBoookPages(Book tempBook, int newPagesNumber) {
-		int oldPagesNumber = tempBook.getReleaseDate();
-		Session session = factory.getCurrentSession();
-		tempBook.setReleaseDate(newPagesNumber);;
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldPagesNumber + " to " + tempBook.getPages());
+		try {
+			int oldPagesNumber = tempBook.getReleaseDate();
+			Session session = factory.getCurrentSession();
+			tempBook.setReleaseDate(newPagesNumber);;
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldPagesNumber + " to " + tempBook.getPages());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void editBookPublisher(Book tempBook, String newPublisher) {
-		String oldPublisher = tempBook.getPublisher();
-		Session session = factory.getCurrentSession();
-		tempBook.setPublisher(newPublisher);;
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldPublisher + " to " + tempBook.getPublisher());
+		try {
+			String oldPublisher = tempBook.getPublisher();
+			Session session = factory.getCurrentSession();
+			tempBook.setPublisher(newPublisher);;
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldPublisher + " to " + tempBook.getPublisher());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void editBookISBN(Book tempBook, String newISBN) {
-		String oldISBN = tempBook.getIsbn();
-		Session session = factory.getCurrentSession();
-		tempBook.setIsbn(newISBN);;
-		session.getTransaction().commit();
-		System.out.println("You have changed field from " + oldISBN + " to " + tempBook.getIsbn());
+		try {
+			String oldISBN = tempBook.getIsbn();
+			Session session = factory.getCurrentSession();
+			tempBook.setIsbn(newISBN);;
+			session.getTransaction().commit();
+			System.out.println("You have changed field from " + oldISBN + " to " + tempBook.getIsbn());
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public Book selectBookById(int tempId) {

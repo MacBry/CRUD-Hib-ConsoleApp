@@ -7,10 +7,12 @@ import com.mac.bry.entity.Book;
 public class DataReader {
 
 	private Scanner scanner;
+	private BookValidator bookValidator;
 
 	public DataReader() {
 		super();
 		this.scanner = new Scanner(System.in);
+		this.bookValidator = new BookValidator();
 	}
 	
 	public void CloseScanner() {
@@ -51,7 +53,11 @@ public class DataReader {
 		System.out.println("ISBN: ");
 		String tempISBN = scanner.nextLine();
 		
-		return new Book(tempTitle, tempAuthor, tempReleaseDate, tempPages,tempPublisher, tempISBN );
+		Book tempBook = new Book(tempTitle, tempAuthor, tempReleaseDate, tempPages,tempPublisher, tempISBN );
+		
+		bookValidator.validBook(tempBook);
+		
+		return tempBook;
 	}
 	
 }
