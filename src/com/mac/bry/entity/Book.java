@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -19,6 +20,7 @@ public class Book {
 	private int id;
 	
 	@NotNull(message="test message title")
+	@NotEmpty
 	@Column(name="title")
 	private String title;
 	
